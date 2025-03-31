@@ -16,7 +16,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "GlamLumina", // ✅ Only needed for GitHub Pages
+  base: "/GlamLumina/", // ✅ Only needed for GitHub Pages
   plugins: [react()],
 });
 

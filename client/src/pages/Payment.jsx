@@ -6,6 +6,8 @@ import Title from '../components/Title';
 const Payment = () => {
 
   const [paymentUrl, setPaymentUrl] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_API_URL; // ✅ Use env variable
+
 
   const handlePayment = async () => {
     
@@ -15,7 +17,7 @@ const Payment = () => {
       amount: 100,
     }
     try {
-      const response = await axios.post('http://localhost:8000/create-order', data)
+      const response = await axios.post('${API_BASE_URL}/create-order', data)
       console.log(response.data)
       setPaymentUrl(response.data.url);
     } catch (error) {
