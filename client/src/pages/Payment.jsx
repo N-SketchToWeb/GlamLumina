@@ -18,6 +18,9 @@ const Payment = () => {
     }
     try {
       const response = await axios.post(`${BASE_URL}/create-order`, data)
+
+      console.log(response.data)
+
       setPaymentUrl(response.data.url);
     } catch (error) {
       console.log("error in payment", error)
