@@ -6,8 +6,15 @@ const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 
+const corsOptions = {
+    origin: 'https://your-frontend-url.com',  // Replace with your actual frontend URL
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+  
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 const MERCHANT_KEY = "96434309-7796-489d-8924-ab56988a6076"
